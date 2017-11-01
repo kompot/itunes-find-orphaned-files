@@ -43,6 +43,9 @@ glob(appleMusicGlobPattern, { cwd: appleMusicFolder }, (er, files) => {
   finished.diskRead = true;
 });
 
+const escapeForBash = (file) =>
+  file.replace(/\$/g,"\\$");
+
 const findOrphanedFiles = () => {
   console.log("#!/usr/bin/env bash");
   console.log("# path to iTunes library xml:", argv.itunesLibraryXml);
@@ -63,7 +66,7 @@ const findOrphanedFiles = () => {
     "# total orphaned files in Apple Music directory to be deleted:",
     orphanedFiles.size
   );
-  [...orphanedFiles].map(file => console.log(`rm "${file}"`));
+  [...orphanedFiles].map(file => console.log(`rm "${escapeForBash(file)}"`));
 };
 
 const intervalId = setInterval(() => {

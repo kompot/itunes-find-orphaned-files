@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": ">=6.11.0"
+    "node": ">=8.9.0"
   },
   "dependencies": {
     "glob": "7.1.2",

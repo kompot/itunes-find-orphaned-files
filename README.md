@@ -11,7 +11,7 @@ Tested on macOS only. Might work on Windows with little-to-no modifications.
 Installation on macOS
 =====================
 
-1. NodeJS >= 6.11 (8.x will do)
+1. NodeJS >= 8.9
 
 ```
 brew install node
